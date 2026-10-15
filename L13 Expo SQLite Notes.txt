@@ -1,0 +1,20 @@
+1.
+CREATE TABLE IF NOT EXISTS movie_theater(
+	id INTEGER PRIMARY KEY NOT NULL, 
+	title TEXT NOT NULL, 
+	rating REAL NOT NULL, 
+	release_year INTEGER NOT NULL,
+	age_rating TEXT);
+
+2.	
+INSERT INTO movie_theater(title, rating, release_year, age_rating)
+	VALUES('Toy Story', 4, 2005, 'E');
+INSERT INTO movie_theater(title, rating, release_year, age_rating)
+	VALUES('Zootopia', 3.2, 2016, NULL);
+
+3.
+await db.runAsync("INSERT INTO movie_theater(title, rating, release_year, age_rating)
+	VALUES(?,?,?,?);", [movie_title, movie_rating, movie_release_year, movie_age_rating]);
+	
+4. 
+SELECT * FROM movie_theater;
